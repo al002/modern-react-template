@@ -1,8 +1,8 @@
-console.log('Narauu content script loaded');
+console.log('myapp content script loaded');
 
 function injectElements() {
   const container = document.createElement('div');
-  container.id = 'narauu-container';
+  container.id = 'my-app-container';
   document.body.appendChild(container);
 }
 

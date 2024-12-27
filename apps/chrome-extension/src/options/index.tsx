@@ -5,7 +5,7 @@ import '../styles/globals.css';
 function Options() {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold">Narauu Settings</h1>
+      <h1 className="text-2xl font-bold">My App Settings</h1>
       {/* Add your settings components here */}
     </div>
   );

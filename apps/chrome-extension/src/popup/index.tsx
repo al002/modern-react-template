@@ -5,8 +5,7 @@ import '../styles/globals.css';
 function Popup() {
   return (
     <div className="w-[300px] p-4">
-      <h1 className="text-lg font-bold">Narauu</h1>
-      <p>Language Learning Assistant</p>
+      <h1 className="text-lg font-bold">My App</h1>
     </div>
   );
 }
