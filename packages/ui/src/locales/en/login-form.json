@@ -1,0 +1,11 @@
+{
+  "email": "Email",
+  "password": "Password",
+  "signIn": "Sign In",
+  "orContinueWith": "Or continue with",
+  "signInWithGoogle": "Sign in with Google",
+  "invalidEmail": "Please enter a valid email address",
+  "requiredField": "This field is required",
+  "passwordMinLength": "Password must be at least 6 characters",
+  "loginError": "Failed to login. Please try again."
+}

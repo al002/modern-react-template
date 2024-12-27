@@ -1,0 +1,43 @@
+{
+  "name": "@myapp/configs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./vite/config": {
+      "types": "./dist/vite/config.d.ts",
+      "import": "./dist/vite/config.js"
+    },
+    "./tsconfig/*": {
+      "default": "./tsconfig/*"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ],
+      "vite/config": [
+        "./dist/vite/config.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "tsconfig"
+  ],
+  "scripts": {
+    "dev": "tsc --project tsconfig.build.json --watch",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  }
+}

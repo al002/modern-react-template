@@ -1,0 +1,60 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "oxlint --fix",
+    "prepare": "husky install",
+    "build:packages": "turbo run build --filter=\"./packages/*\"",
+    "dev:packages": "turbo run dev --filter=\"./packages/*\"",
+    "lint:packages": "turbo run lint --filter=\"./packages/*\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.15.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/vite": "4.0.0-beta.8",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "husky": "^8.0.0",
+    "lightningcss": "^1.28.2",
+    "lint-staged": "^15.2.11",
+    "oxlint": "^0.15.3",
+    "prettier": "^3.4.2",
+    "tailwindcss": "4.0.0-beta.8",
+    "tailwindcss-animate": "^1.0.7",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.8",
+    "axios": "^1.6.2",
+    "clsx": "^2.1.1",
+    "i18next": "^24.2.0",
+    "lucide-react": "^0.469.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.2.0",
+    "tailwind-merge": "^2.5.5",
+    "zustand": "^4.4.7"
+  },
+  "resolutions": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2"
+  }
+}

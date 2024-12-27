@@ -1,0 +1,8 @@
+{
+  "exclude": ["**/node_modules/**", "**/dist/**", "**/.turbo/**"],
+  "rules": {
+    "correctness": "error",
+    "suspicious": "error",
+    "style": "error"
+  }
+}

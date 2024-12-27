@@ -1,0 +1,27 @@
+{
+  "extends": "@myapp/configs/tsconfig/app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "jsxImportSource": "react",
+    "types": ["react", "react-dom"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "../../packages/ui"
+    },
+    {
+      "path": "../../packages/core"
+    },
+    {
+      "path": "../../packages/shared"
+    }
+  ]
+}

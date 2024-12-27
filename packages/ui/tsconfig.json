@@ -1,0 +1,21 @@
+{
+  "extends": "@myapp/configs/tsconfig/library.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "rootDir": "src",
+    "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "src/**/*.json"],
+  "references": [
+    {
+      "path": "../configs"
+    },
+    {
+      "path": "../core"
+    }
+  ]
+}
