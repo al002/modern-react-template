@@ -12,7 +12,7 @@ function Login() {
   const [error, setError] = useState<string | null>(null);
   const authStore = useAuthStore();
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = (res: unknown) => {
     authStore.isAuthenticated = true;
     navigate({ to: '/' });
   };
@@ -25,7 +25,6 @@ function Login() {
     try {
       // TODO: Impl Google Login Logic here
       console.log('google login');
-      handleLoginSuccess();
     } catch (error) {
       if (error instanceof Error) {
         handleLoginError(error);
@@ -37,7 +36,7 @@ function Login() {
     try {
       const response = await authApi.login({ email, password });
       if (response) {
-        handleLoginSuccess();
+        handleLoginSuccess(response);
       }
     } catch (error: any) {
       if (error && error.message) {
@@ -57,7 +56,7 @@ function Login() {
           </div>
         </div>
         <LoginForm
-          onSuccess={handleLoginSuccess}
+          onLogin={handleEmailLogin}
           onError={handleLoginError}
           onGoogleLogin={handleGoogleLogin}
           className="space-y-4"

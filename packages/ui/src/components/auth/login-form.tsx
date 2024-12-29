@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 import { OAuthButton } from './oauth-button';
 
 export type LoginFormProps = BaseProps & {
-  onSuccess?: () => void;
+  onLogin?: (data: LoginFormValues) => Promise<void>;
   onError?: (error: Error) => void;
   onGoogleLogin?: () => Promise<void>;
 };
@@ -20,7 +20,8 @@ type LoginFormValues = {
   password: string;
 };
 
-export function LoginForm({ className, onGoogleLogin, onSuccess, onError }: LoginFormProps) {
+export function LoginForm({
+  className, onLogin, onGoogleLogin, onError }: LoginFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const { t } = useUiTranslation();
@@ -29,8 +30,8 @@ export function LoginForm({ className, onGoogleLogin, onSuccess, onError }: Logi
   const onSubmit = async (data: LoginFormValues) => {
     try {
       setIsLoading(true);
+      await onLogin?.(data);
       // TODO: Implement login logic
-      onSuccess?.();
     } catch (error) {
       onError?.(error as Error);
     } finally {
@@ -42,7 +43,6 @@ export function LoginForm({ className, onGoogleLogin, onSuccess, onError }: Logi
     try {
       setIsGoogleLoading(true);
       await onGoogleLogin?.();
-      onSuccess?.();
     } catch (error) {
       onError?.(error as Error);
     } finally {
